@@ -1,0 +1,83 @@
+version: "3.9"
+services:
+  db:
+    image: mongo
+    container_name: carwash
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
+    env_file:
+      - ./.env
+    networks:
+      - carwash
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    entrypoint: redis-server --appendonly yes
+    # volumes:
+    #   -
+    networks:
+      - carwash
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data/redisinsight:/db
+    depends_on:
+      - redis
+
+  backend:
+    container_name: backend
+    image: backend
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+      args:
+        buildVersion: 1
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./server:/app
+    depends_on:
+      - db
+      - redis
+      - redisinsight
+      - rabbitmq
+    networks:
+      - carwash
+    env_file:
+      - ./.env
+  broker:
+    container_name: broker
+    image: broker
+    build:
+      context: ./broker
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./broker:/app
+    depends_on:
+      - rabbitmq
+    networks:
+      - carwash
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+      - ./data/rabbitmq:/var/log/rabbitmq
+    networks:
+      - carwash
+networks:
+  carwash:
+    driver: bridge

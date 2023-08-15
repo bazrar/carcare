@@ -1,0 +1,174 @@
+{
+  "booking_created" : [
+    {
+      "type": "push",
+      "title": "New wash request",
+      "message": "{{seekerName}} has requested for vehicle wash",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{seekerName}} has requested for vehicle wash",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "booking_accepted" : [
+    {
+      "type":"push",
+      "title": "Wash request accepted",
+      "message": "{{serviceStationName}} has accepted your vehicle wash",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{serviceStationName}} has accepted your vehicle wash",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "booking_assigned" : [
+    {
+      "type":"push",
+      "title": "Wash request assigned",
+      "message": "{{seekerName}}'s vehicle wash request has been assigned to you",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{seekerName}}'s vehicle wash request has been assigned to you",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "booking_rejected_by_provider" : [
+    {
+      "type":"push",
+      "title": "Wash request rejected",
+      "message": "{{serviceStationName}} has declined your vehicle wash request",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{serviceStationName}} has declined your vehicle wash request",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "booking_rejected_by_seeker" : [
+    {
+      "type":"push",
+      "title": "Wash request rejected",
+      "message": "{{seekerName}} has declined vehicle wash request",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{seekerName}} has declined vehicle wash request",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "booking_confirmed" : [
+    {
+      "type":"push",
+      "title": "Wash request confirmed",
+      "message": "{{seekerName}} has confirmed vehicle wash request",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{seekerName}} has confirmed vehicle wash request",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "booking_completed" : [
+    {
+      "type":"push",
+      "title": "Wash request completed",
+      "message": "Wash request for {{date}} at {{location}} has completed. Please add review",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    }
+  ],
+  "provider_commuting" : [
+    {
+      "type":"push",
+      "title": "Provider commuting",
+      "message": "{{serviceStationName}} is commuting to pick",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{serviceStationName}} is commuting to pick",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "provider_arrived" : [
+    {
+
+      "type":"push",
+      "title": "Provider arrived",
+      "message": "{{providerName}} has reached to your location",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{providerName}} has reached to your location",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ],
+  "service_completed" : [
+    {
+      "type":"push",
+      "title": "Service completed",
+      "message": "Service is completed",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    }
+  ],
+  "payment_completed" : [
+    {
+      "type": "push",
+      "title": "Payment Completed",
+      "message": "{{seekerName}} has completed payment for vehicle wash",
+      "washRequest": "{{washRequest}}",
+      "status": "{{status}}"
+    },
+    {
+      "type":"notificationCenter",
+      "title": "{{brand}} | {{model}}",
+      "message": "{{seekerName}} has completed payment for vehicle wash",
+      "status": "{{status}}",
+      "washRequest": "{{washRequest}}",
+      "redirectLink":"redirectLink"
+    }
+  ]
+}

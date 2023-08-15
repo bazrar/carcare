@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "plugins": ["@nestjs/swagger/dist/plugin"],
+    "assets": [
+      "**/*.handlebars",
+      {
+        "include": "../public",
+        "outDir": "dist/public",
+        "watchAssets": true
+      },
+      {
+        "include": "../views",
+        "outDir": "dist/views",
+        "watchAssets": true
+      }
+    ]
+  },
+  "watchAssets": true
+}
